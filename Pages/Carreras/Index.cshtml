@@ -1,0 +1,50 @@
+﻿@page
+@model SistemaAcademico.Pages.Carreras.IndexModel
+
+<a asp-page="Create" class="btn btn-success mb-4">
+    <i class="bi bi-journal-plus"></i> Agregar carrera
+</a>
+
+@if (Model.Carreras.Count == 0)
+{
+    <div class="alert alert-warning" role="alert">
+        <i class="bi bi-info-circle-fill"></i> No hay carreras cargadas.
+    </div>
+}
+else
+{
+    <div class="table-responsive">
+        <table class="table table-striped table-hover align-middle shadow-sm border rounded">
+            <thead class="table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Modalidad</th>
+                    <th>Duración (años)</th>
+                    <th>Título otorgado</th>
+                    <th class="text-center">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var carrera in Model.Carreras)
+                {
+                    <tr>
+                        <td>@carrera.Id</td>
+                        <td>@carrera.Nombre</td>
+                        <td>@carrera.Modalidad</td>
+                        <td>@carrera.Años</td>
+                        <td>@carrera.Título</td>
+                        <td class="text-center">
+                            <a asp-page="Edit" asp-route-id="@carrera.Id" class="btn btn-outline-warning btn-sm me-1">
+                                <i class="bi bi-pencil-fill"></i>
+                            </a>
+                            <a asp-page="Delete" asp-route-id="@carrera.Id" class="btn btn-outline-danger btn-sm">
+                                <i class="bi bi-trash3-fill"></i>
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}

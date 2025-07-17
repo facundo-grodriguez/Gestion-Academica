@@ -1,0 +1,33 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="container py-5">
+    <div class="text-center mb-5">
+        <p class="lead text-muted">Accedé a la gestión de alumnos y carreras.</p>
+    </div>
+
+    <div class="row justify-content-center g-4">
+        <div class="col-md-4">
+            <div class="card text-center border-0 shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title fw-semibold">Alumnos</h5>
+                    <p class="card-text text-muted">Alta, baja, modificación y consulta de alumnos.</p>
+                    <a asp-page="/Alumnos/Index" class="btn btn-outline-primary">Ir a Alumnos</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card text-center border-0 shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title fw-semibold">Carreras</h5>
+                    <p class="card-text text-muted">Gestioná las carreras disponibles en el sistema.</p>
+                    <a asp-page="/Carreras/Index" class="btn btn-outline-primary">Ir a Carreras</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
