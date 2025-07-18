@@ -1,50 +1,55 @@
-﻿@page
+@page
 @model SistemaAcademico.Pages.Alumnos.EditModel
 @{
 }
-<form method="post" class="p-4 border rounded shadow-sm bg-white">
-    <input type="hidden" asp-for="Alumno.Id" />
+<div class="row justify-content-center">
+    <div class="col-md-6 col-lg-5">
+        <form method="post" class="p-4 border rounded shadow-sm bg-white">
+            <input type="hidden" asp-for="Alumno.Id" />
 
-    <h4 class="mb-4 text-primary"><i class="bi bi-pencil-square"></i> Editar Alumno</h4>
+            <h4 class="mb-4 text-primary"> Editar Alumno</h4>
 
-    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
 
-    <div class="form-group mb-3">
-        <label asp-for="Alumno.Nombre" class="form-label fw-semibold"></label>
-        <input asp-for="Alumno.Nombre" class="form-control" />
-        <span asp-validation-for="Alumno.Nombre" class="text-danger"></span>
+            <div class="form-group mb-3">
+                <label asp-for="Alumno.Nombre" class="form-label fw-semibold"></label>
+                <input asp-for="Alumno.Nombre" class="form-control" />
+                <span asp-validation-for="Alumno.Nombre" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Alumno.Apellido" class="form-label fw-semibold"></label>
+                <input asp-for="Alumno.Apellido" class="form-control" />
+                <span asp-validation-for="Alumno.Apellido" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Alumno.DNI" class="form-label fw-semibold"></label>
+                <input asp-for="Alumno.DNI" class="form-control" />
+                <span asp-validation-for="Alumno.DNI" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Alumno.Email" class="form-label fw-semibold"></label>
+                <input asp-for="Alumno.Email" class="form-control" />
+                <span asp-validation-for="Alumno.Email" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-4">
+                <label asp-for="Alumno.FechaNacimiento" class="form-label fw-semibold"></label>
+                <input asp-for="Alumno.FechaNacimiento" class="form-control" type="date" />
+                <span asp-validation-for="Alumno.FechaNacimiento" class="text-danger"></span>
+            </div>
+
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-success " >
+                    <i class="bi bi-check-circle-fill"></i> Guardar
+                </button>
+                <a asp-page="Index" class="btn btn-outline-secondary ">
+                    <i class="bi bi-x-circle"></i> Cancelar
+                </a>
+            </div>
+        </form>
     </div>
-
-    <div class="form-group mb-3">
-        <label asp-for="Alumno.Apellido" class="form-label fw-semibold"></label>
-        <input asp-for="Alumno.Apellido" class="form-control" />
-        <span asp-validation-for="Alumno.Apellido" class="text-danger"></span>
-    </div>
-
-    <div class="form-group mb-3">
-        <label asp-for="Alumno.DNI" class="form-label fw-semibold"></label>
-        <input asp-for="Alumno.DNI" class="form-control" />
-        <span asp-validation-for="Alumno.DNI" class="text-danger"></span>
-    </div>
-
-    <div class="form-group mb-3">
-        <label asp-for="Alumno.Email" class="form-label fw-semibold"></label>
-        <input asp-for="Alumno.Email" class="form-control" />
-        <span asp-validation-for="Alumno.Email" class="text-danger"></span>
-    </div>
-
-    <div class="form-group mb-4">
-        <label asp-for="Alumno.FechaNacimiento" class="form-label fw-semibold"></label>
-        <input asp-for="Alumno.FechaNacimiento" class="form-control" type="date" />
-        <span asp-validation-for="Alumno.FechaNacimiento" class="text-danger"></span>
-    </div>
-
-    <div class="d-flex gap-2">
-        <button type="submit" class="btn btn-success " >
-            <i class="bi bi-check-circle-fill"></i> Guardar
-        </button>
-        <a asp-page="Index" class="btn btn-outline-secondary ">
-            <i class="bi bi-x-circle"></i> Cancelar
-        </a>
-    </div>
-</form>
+</div>
+            
