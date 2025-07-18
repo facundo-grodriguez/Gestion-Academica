@@ -31,7 +31,7 @@ namespace SistemaAcademico.Pages.Carreras
         {
             Modalities = OpcionesModalidad.List;
 
-            ServiciosCarrera.editarCarrera(Carrera);
+            ServiciosCarrera.EditarCarrera(Carrera);
 
             return RedirectToPage("Index");
         }

@@ -45,7 +45,7 @@ namespace SistemaAcademico.Servicios
         public static void EliminarCarrera(int id)
         {
             var carreras = ObtenerCarrerasLista();
-            var carreraAEliminar = carreras.Find(c => c.Id == id);
+            var carreraAEliminar = BuscarCarreraPorId(carreras, id);
             if (carreraAEliminar != null)
             {
                 carreras.Remove(carreraAEliminar);
@@ -53,21 +53,32 @@ namespace SistemaAcademico.Servicios
             }
         }
 
-        public static void editarCarrera(Carrera carreraEditada)
+        public static void EditarCarrera(Carrera carreraEditada)
         {
             var carreras = ObtenerCarrerasLista();
-            foreach (var carrera in carreras)
+            var Carrera = BuscarCarreraPorId(carreras, carreraEditada.Id);
+
+            if (Carrera != null)
             {
-                if (carrera.Id == carreraEditada.Id)
+                Carrera.Nombre = carreraEditada.Nombre;
+                Carrera.Modalidad = carreraEditada.Modalidad;
+                Carrera.Anios = carreraEditada.Anios;
+                Carrera.Titulo = carreraEditada.Titulo;
+            }
+
+            GuardarCarreras(carreras);
+        }
+
+        private static Carrera? BuscarCarreraPorId(List<Carrera> lista, int id)
+        {
+            foreach (var carrera in lista)
+            {
+                if (carrera.Id == id)
                 {
-                    carrera.Nombre = carreraEditada.Nombre;
-                    carrera.Modalidad = carreraEditada.Modalidad;
-                    carrera.Anios = carreraEditada.Anios;
-                    carrera.Titulo = carreraEditada.Titulo;
-                    break;
+                    return carrera;
                 }
             }
-            GuardarCarreras(carreras);
+            return null;
         }
     }
 }

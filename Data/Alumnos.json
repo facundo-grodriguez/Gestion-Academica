@@ -1,0 +1,16 @@
+[
+  {
+    "Nombre": "Juan",
+    "Apellido": "Pérez",
+    "DNI": "12345678",
+    "Email": "juan.perez@mail.com",
+    "FechaNacimiento": "1995-10-15T00:00:00"
+  },
+  {
+    "Nombre": "Ana",
+    "Apellido": "Gómez",
+    "DNI": "87654321",
+    "Email": "ana.gomez@mail.com",
+    "FechaNacimiento": "1997-05-20T00:00:00"
+  }
+]

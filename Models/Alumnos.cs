@@ -17,7 +17,7 @@ namespace SistemaAcademico.Models
 
         [Required(ErrorMessage = "Debe agregar el DNI")]
         [Range(1000000, 99999999, ErrorMessage = "El DNI debe tener entre 7 y 8 dígitos")]
-        public int Dni { get; set; }
+        public int DNI { get; set; }
 
         [Required(ErrorMessage = "Debe agregar un email")]
         [EmailAddress(ErrorMessage = "Debe ingresar un email válido")]

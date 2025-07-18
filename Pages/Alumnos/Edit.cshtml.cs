@@ -32,7 +32,7 @@ namespace SistemaAcademico.Pages.Alumnos
                 {
                     a.Nombre = Alumno.Nombre;
                     a.Apellido = Alumno.Apellido;
-                    a.Dni = Alumno.Dni;
+                    a.DNI = Alumno.DNI;
                     a.Email = Alumno.Email;
                     a.FechaNacimiento = Alumno.FechaNacimiento;
                     break;
