@@ -4,7 +4,10 @@ namespace SistemaAcademico.AccesoDatos
     public class AccesoDatosJson<T> : IAccesoDatos<T> where T : class
     {
         private string ruta;
-        public AccesoDatosJson(string nombreArchivo) => ruta = $"Data/{nombreArchivo}.json";
+        public AccesoDatosJson(string nombreArchivo)
+        {
+            ruta = $"Data/{nombreArchivo}.json";
+        }
 
         //Metodos sin reflexion
         public string LeerTextoDelArchivo()

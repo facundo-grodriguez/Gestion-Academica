@@ -4,40 +4,37 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
 
+
 namespace SistemaAcademico.Servicios
 {
-    public class ServicioCarrera
+    public class ServicioAlumno
     {
-        private readonly IRepositorio<Carrera> _repo;
-        public ServicioCarrera(IRepositorio<Carrera> repo)
+        private readonly IRepositorio<Alumno> _repo;
+        public ServicioAlumno(IRepositorio<Alumno> repo)
         {
             _repo = repo;
         }
-        public List<Carrera> ObtenerDatos()
+        public List<Alumno> ObtenerDatos()
         {
             return _repo.ObtenerDatos();
         }
-
-        public Carrera? BuscarPorId(int id)
+        public Alumno? BuscarPorId(int id)
         {
             return _repo.BuscarPorId(id);
         }
-
-        public void Agregar(Carrera carrera)
+        public void Agregar(Alumno Alumno)
         {
-            _repo.Agregar(carrera);
+            _repo.Agregar(Alumno);
         }
-
-        public void Editar(Carrera carrera)
+        public void Editar(Alumno Alumno)
         {
-            _repo.Editar(carrera);
+            _repo.Editar(Alumno);
         }
-
         public void EliminarPorId(int id)
         {
             _repo.EliminarPorId(id);
         }
+
+
     }
 }
-
-        

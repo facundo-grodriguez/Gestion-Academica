@@ -2,7 +2,7 @@
 
 namespace SistemaAcademico.Repositorio
 {
-    public class RepositorioCrudJson<T> where T : class
+    public class RepositorioCrudJson<T> : IRepositorio<T> where T : class
     {
         private readonly IAccesoDatos<T> _acceso;
         public RepositorioCrudJson(IAccesoDatos<T> acceso)
@@ -10,7 +10,7 @@ namespace SistemaAcademico.Repositorio
             _acceso = acceso;
         }
 
-        public List<T> ObtenerTodos()
+        public List<T> ObtenerDatos()
         {
             return _acceso.Leer();
         }
@@ -38,7 +38,7 @@ namespace SistemaAcademico.Repositorio
 
         public void Agregar(T entidad)
         {
-            var lista = ObtenerTodos();
+            var lista = ObtenerDatos();
             int nuevoId = ObtenerNuevoId(lista);
 
             var propiedadId = typeof(T).GetProperty("Id");
@@ -64,12 +64,12 @@ namespace SistemaAcademico.Repositorio
         }
         public T BuscarPorId(int id)
         {
-            var lista = ObtenerTodos();
+            var lista = ObtenerDatos();
             return BuscarEnListaPorId(lista, id);
         }
         public void EliminarPorId(int id)
         {
-            var lista = ObtenerTodos();
+            var lista = ObtenerDatos();
             T? entidad = BuscarEnListaPorId(lista, id);
 
             if (entidad != null)
@@ -81,7 +81,7 @@ namespace SistemaAcademico.Repositorio
         }
         public void Editar(T entidadNueva)
         {
-            var lista = ObtenerTodos();
+            var lista = ObtenerDatos();
             var propiedadId = typeof(T).GetProperty("Id");
             int id = (int)propiedadId.GetValue(entidadNueva);
 

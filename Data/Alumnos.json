@@ -1,16 +1,1 @@
-[
-  {
-    "Nombre": "Juan",
-    "Apellido": "Pérez",
-    "DNI": "12345678",
-    "Email": "juan.perez@mail.com",
-    "FechaNacimiento": "1995-10-15T00:00:00"
-  },
-  {
-    "Nombre": "Ana",
-    "Apellido": "Gómez",
-    "DNI": "87654321",
-    "Email": "ana.gomez@mail.com",
-    "FechaNacimiento": "1997-05-20T00:00:00"
-  }
-]
+[{"Id":1,"Nombre":"Juan","Apellido":"P\u00E9rez","DNI":12345677,"Email":"juan.perez@mail.com","FechaNacimiento":"1995-10-15T00:00:00"},{"Id":2,"Nombre":"Ana","Apellido":"G\u00F3mez","DNI":87654321,"Email":"ana.gomez@mail.com","FechaNacimiento":"1997-05-20T00:00:00"},{"Id":3,"Nombre":"rtrtrt","Apellido":"dsdsdrrrt","DNI":45879849,"Email":"juan.perez@mail.com","FechaNacimiento":"2001-09-15T00:00:00"}]

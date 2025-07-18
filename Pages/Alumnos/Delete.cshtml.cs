@@ -1,40 +1,37 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using SistemaAcademico.Data;
+using SistemaAcademico.AccesoDatos;
 using SistemaAcademico.Models;
+using SistemaAcademico.Repositorio;
+using SistemaAcademico.Servicios;
 
 namespace SistemaAcademico.Pages.Alumnos
 {
     public class DeleteModel : PageModel
     {
         [BindProperty]
-        public Alumno Alumno { get; set; }
-        public void OnGet(int id)
+        public Alumno? Alumno { get; set; }
+
+        private readonly ServicioAlumno servicio;
+        public DeleteModel()
         {
-            foreach (var a in DatosCompartidos.Alumnos)
-            {
-                if (a.Id == id)
-                {
-                    Alumno = a;
-                    break;
-                }
-            }
+            IAccesoDatos<Alumno> acceso = new AccesoDatosJson<Alumno>("Alumnos");
+            IRepositorio<Alumno> repo = new RepositorioCrudJson<Alumno>(acceso);
+            servicio = new ServicioAlumno(repo);
         }
-        public IActionResult OnPost()
+        public IActionResult OnGet(int id)
         {
-            Alumno alumnoAEliminar = null;
-            foreach (var a in DatosCompartidos.Alumnos)
+            var alumno = servicio.BuscarPorId(id);
+            if (alumno == null)
             {
-                if (a.Id == Alumno.Id)
-                {
-                    alumnoAEliminar = a;
-                    break;
-                }
+                return RedirectToPage("Index");
             }
-            if (alumnoAEliminar != null)
-            {
-                DatosCompartidos.Alumnos.Remove(alumnoAEliminar);
-            }
+            Alumno = alumno;
+            return Page();
+        }
+        public IActionResult OnPost(int id)
+        {
+            servicio.EliminarPorId(id);
             return RedirectToPage("Index");
         }
     }

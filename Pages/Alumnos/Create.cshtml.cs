@@ -1,17 +1,29 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using SistemaAcademico.Data;
+using SistemaAcademico.AccesoDatos;
 using SistemaAcademico.Models;
+using SistemaAcademico.Repositorio;
+using SistemaAcademico.Servicios;
+
 
 namespace SistemaAcademico.Pages.Alumnos
 {
     public class CreateModel : PageModel
     {
+        [BindProperty]
+        public Alumno Alumno { get; set; }
+
+        private readonly ServicioAlumno servicio;
+        public CreateModel()
+        {
+            IAccesoDatos<Alumno> acceso = new AccesoDatosJson<Alumno>("Alumnos");
+            IRepositorio<Alumno> repo = new RepositorioCrudJson<Alumno>(acceso);
+            servicio = new ServicioAlumno(repo);
+        }
         public void OnGet()
         {
         }
-        [BindProperty]
-        public required Alumno Alumno { get; set; }
+        
 
         public IActionResult OnPost()
         {
@@ -19,8 +31,7 @@ namespace SistemaAcademico.Pages.Alumnos
             {
                 return Page();
             }
-            Alumno.Id = DatosCompartidos.ObtenerNuevoIdAlumnos();
-            DatosCompartidos.Alumnos.Add(Alumno);
+            servicio.Agregar(Alumno);
             return RedirectToPage("Index");
         }
     }
