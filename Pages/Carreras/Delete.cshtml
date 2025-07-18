@@ -1,25 +1,33 @@
-﻿@page
+@page
 @model SistemaAcademico.Pages.Carreras.DeleteModel
 @{
 }
 <input type="hidden" asp-for="Carrera.Id" />
 
-<form method="post">
-	<h4>Eliminará esta carrera:</h4>
+<form method="post" class="p-4 border rounded shadow-sm bg-light">
+    <h4 class="mb-4 text-danger">
+        <i class="bi bi-exclamation-triangle-fill"></i> Vas a eliminar la siguiente carrera:
+    </h4>
 
-	<div>
-		<strong>Nombre:</strong> @Model.Carrera.Nombre
-	</div>
-	<div>
-		<strong>Modalidad:</strong> @Model.Carrera.Modalidad
-	</div>
-	<div>
-		<strong>Duración:</strong> @Model.Carrera.Anios
-	</div>
-	<div>
-		<strong>Título otorgado:</strong> @Model.Carrera.Titulo
-	</div>
-	<br />
-	<button type="submit" class="btn btn-danger">Eliminar</button>
-	<a asp-page="Index" class="btn btn-secondary">Cancelar</a>
+    <div class="mb-2">
+        <strong class="text-dark">Nombre:</strong> <span class="text-muted">@Model.Carrera.Nombre</span>
+    </div>
+    <div class="mb-2">
+        <strong class="text-dark">Modalidad:</strong> <span class="text-muted">@Model.Carrera.Modalidad</span>
+    </div>
+    <div class="mb-2">
+        <strong class="text-dark">Duración:</strong> <span class="text-muted">@Model.Carrera.Anios</span>
+    </div>
+    <div class="mb-4">
+        <strong class="text-dark">Título otorgado:</strong> <span class="text-muted">@Model.Carrera.Titulo</span>
+    </div>
+
+    <div class="d-flex gap-2">
+        <button type="submit" class="btn btn-danger">
+            <i class="bi bi-trash3-fill"></i> Eliminar
+        </button>
+        <a asp-page="Index" class="btn btn-outline-secondary">
+            <i class="bi bi-arrow-left"></i> Cancelar
+        </a>
+    </div>
 </form>
