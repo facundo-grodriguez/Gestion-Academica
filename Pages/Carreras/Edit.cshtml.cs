@@ -33,9 +33,9 @@ namespace SistemaAcademico.Pages.Carreras
                 {
                     c.Nombre = Carrera.Nombre;
                     c.Modalidad = Carrera.Modalidad;
-                    c.Años = Carrera.Años;
-                    string? title = Carrera.Título;
-                    c.Título = title;
+                    c.Anios = Carrera.Anios;
+                    string? title = Carrera.Titulo;
+                    c.Titulo = title;
                     break;
                 }
             }

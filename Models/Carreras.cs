@@ -12,10 +12,10 @@ namespace SistemaAcademico.Models
         public string? Nombre { get; set; }
 
         [Required(ErrorMessage = "debe agregar un numero")]
-        public int Años { get; set; }
+        public int Anios { get; set; }
 
         [Required(ErrorMessage = "debe seleccionar un titulo")]
-        public string? Título { get; set; }
+        public string? Titulo { get; set; }
 
         [Required(ErrorMessage = "debe seleccionar una modalidad")]
         public string? Modalidad { get; set; }

@@ -11,7 +11,7 @@ namespace SistemaAcademico.Pages.Alumnos
         {
         }
         [BindProperty]
-        public Alumno Alumno { get; set; }
+        public required Alumno Alumno { get; set; }
 
         public IActionResult OnPost()
         {

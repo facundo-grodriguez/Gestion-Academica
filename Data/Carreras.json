@@ -1,0 +1,16 @@
+﻿[
+    {
+        "Id": 1,
+        "Nombre": "Licenciatura en Administración",
+        "Anios": 4,
+        "Titulo": "Licenciado/a Administrativo/a",
+        "Modalidad": "Presencial"
+    },
+    {
+        "Id": 2,
+        "Nombre": "Contador Público",
+        "Anios": 5,
+        "Titulo": "Contador/a Público/a",
+        "Modalidad": "Hibrido"
+    }
+]
