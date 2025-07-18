@@ -2,34 +2,38 @@
 @model SistemaAcademico.Pages.Carreras.CreateModel
 @{
 }
-<form method="post">
-    <h2>Formulario de Carreras</h2>
-    <div class="form-group">
-        <label asp-for="Carrera.Nombre"></label>
-        <input asp-for="Carrera.Nombre" class="form-control" />
-        <span asp-validation-for="Carrera.Nombre" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="Carrera.Anios"></label>
-        <input asp-for="Carrera.Anios" class="form-control" />
-        <span asp-validation-for="Carrera.Anios" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="Carrera.Titulo"></label>
-        <select asp-for="Carrera.Titulo"
-                asp-items="@(new SelectList(Model.Modalities))"
-            class="form-control"
-        >
-            <option value="">Seleccione un titulo</option>
-        </select>
-        <span asp-validation-for="Carrera.Titulo" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="Carrera.Modalidad"></label>
-        <input asp-for="Carrera.Titulo" class="form-control" />
-        <span asp-validation-for="Carrera.Modalidad" class="text-danger"></span>
+<div class="row justify-content-center">
+    <div class="col-md-6 col-lg-5">
+        <form method="post">
+            <h2 class="text-center">Formulario de Carreras</h2>
+            <div class="form-group">
+                <label asp-for="Carrera.Nombre"></label>
+                <input asp-for="Carrera.Nombre" class="form-control" />
+                <span asp-validation-for="Carrera.Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Carrera.Anios">Años</label>
+                <input asp-for="Carrera.Anios" class="form-control" />
+                <span asp-validation-for="Carrera.Anios" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Carrera.Titulo"></label>
+                <input asp-for="Carrera.Titulo" class="form-control" />
+                <span asp-validation-for="Carrera.Titulo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Carrera.Modalidad"></label>
+                <select asp-for="Carrera.Modalidad"
+                        asp-items="@(new SelectList(Model.Modalities))"
+                        class="form-control">
+                    <option value="">Seleccione una Modalidad</option>
+                </select>
+                <span asp-validation-for="Carrera.Modalidad" class="text-danger"></span>
+
+            </div>
+            <button type="submit" class="btn btn-primary mt-2">Guardar</button>
+        </form>
 
     </div>
-    <button type="submit" class="btn btn-primary mt-2">Guardar</button>
-</form>
+</div>
 
